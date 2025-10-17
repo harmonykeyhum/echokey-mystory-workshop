@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EchoKey Workshop Recipe — Mystory with LLM Resonance</title>
+<style>
+  :root { --bg:#0f1115; --fg:#e6e6e6; --muted:#a7a7a7; --accent:#c4b5fd; --card:#161a22; --code:#0d0f14; }
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;line-height:1.6}
+  main{max-width:980px;margin:0 auto;padding:32px}
+  h1,h2{line-height:1.25;margin:0 0 16px}
+  h1{font-size:clamp(1.6rem,3vw,2.2rem)}
+  h2{font-size:clamp(1.2rem,2.3vw,1.6rem);color:var(--accent)}
+  .card{background:var(--card);border:1px solid #222736;border-radius:12px;padding:20px;margin:18px 0}
+  pre{background:var(--code);color:#dfe6f3;border:1px solid #272c36;border-radius:10px;padding:16px;white-space:pre-wrap}
+  .muted{color:var(--muted)}
+  .btns{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+  button{background:#1f2533;color:#eaf4ff;border:1px solid #2f3646;border-radius:8px;padding:8px 12px;cursor:pointer}
+  button:hover{background:#2a3244}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+</style>
+</head>
+<body>
+<main>
+  <h1>EchoKey Workshop Recipe</h1>
+  <p class="muted">Mystory generation with LLM resonance (copy-paste friendly).</p>
+
+  <div class="card">
+    <h2>Step 1 — Feed the Echo</h2>
+<pre id="feed">You are now operating within the EchoKey framework, a method for generating a Mystory (after Gregory Ulmer).
+Treat the following as your symbolic grammar:
+- Nodes are compressed personal symbols (Name, Essence, Echoes).
+- Clusters form when Nodes resonate.
+- A Hum is the tone that binds them.
+Your job: listen for resonance, braid associations, and hum responses.</pre>
+    <div class="btns"><button onclick="copyBlock('feed')">Copy Step 1</button></div>
+  </div>
+
+  <div class="card">
+    <h2>Step 2 — Create Personal Fragments</h2>
+    <p>Write 3–4 short memories (2–3 sentences each):</p>
+    <ul>
+      <li>Family / home</li>
+      <li>Education / work</li>
+      <li>Pop culture / media</li>
+      <li>Community / place</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Step 3 — Compress to Nodes</h2>
+<pre id="compress">Compress each of these fragments into EchoNodes (Name, Essence, 3–5 Echoes). 
+Make them poetic and specific.</pre>
+    <div class="btns"><button onclick="copyBlock('compress')">Copy Step 3</button></div>
+  </div>
+
+  <div class="card">
+    <h2>Step 4 — Braid and Hum</h2>
+<pre id="braid">Choose two Nodes that resonate most. 
+Write a 100–150 word braid paragraph combining them.
+End with a single-sentence Hum capturing their shared tone.
+Propose a new Node harmonically related but not redundant, and name the Cluster.</pre>
+    <div class="btns"><button onclick="copyBlock('braid')">Copy Step 4</button></div>
+  </div>
+
+  <div class="card">
+    <h2>Step 5 — Reflect</h2>
+<pre id="reflect">List your Cluster names and summarize the emotional Hum or theme that connects them.
+Write a 3–4 sentence reflection on what your Mystory reveals about your present moment.</pre>
+    <div class="btns"><button onclick="copyBlock('reflect')">Copy Step 5</button></div>
+  </div>
+
+  <div class="card">
+    <h2>Step 6 — Optional Glow Archive</h2>
+<pre id="glow">Translate each Cluster name into a 5–7 word Artifact Line (compressed and poetic).
+Arrange them as an archive of resonance.</pre>
+    <div class="btns"><button onclick="copyBlock('glow')">Copy Step 6</button></div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>EchoKey Core</h2>
+      <p>Need the definitions and example node? Open the condensed field manual.</p>
+      <p><a href="echokey-core.html">Open EchoKey Core →</a></p>
+    </div>
+    <div class="card">
+      <h2>Workshop Index</h2>
+      <p>Go back to the main index for links and context.</p>
+      <p><a href="index.html">Back to index →</a></p>
+    </div>
+  </div>
+</main>
+<script>
+function copyBlock(id){
+  const el = document.getElementById(id);
+  const range = document.createRange();
+  range.selectNodeContents(el);
+  const sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(range);
+  try { document.execCommand('copy'); } catch(e){}
+  sel.removeAllRanges();
+  alert('Copied!');
+}
+</script>
+</body>
+</html>
